@@ -1,0 +1,164 @@
+* {
+    box-sizing: border-box;
+    transition: background-color 0.2s ease, transform 0.1s ease, box-shadow 0.2s ease;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 100%);
+    min-height: 100vh;
+    margin: 0;
+    padding: 30px 20px;
+    color: #f8fafc;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+header h1 {
+    font-size: 2.2rem;
+    font-weight: 700;
+    letter-spacing: -0.05em;
+    margin: 0;
+    background: linear-gradient(to right, #38bdf8, #818cf8);
+    -webkit-background-clip: text;   
+    -webkit-text-fill-color: transparent; 
+    background-clip: text;           
+    color: transparent;              
+    text-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.board {
+    display: flex;
+    gap: 25px;
+    align-items: flex-start;
+    justify-content: center;
+    max-width: 1250px;
+    margin: 0 auto;
+    overflow-x: auto;
+    padding-bottom: 15px;
+}
+
+.column {
+    background-color: rgba(30, 41, 59, 0.7);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    flex: 1;
+    min-width: 280px;
+    max-width: 360px;
+    border-radius: 12px;
+    padding: 16px;
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3), 0 8px 10px -6px rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: column;
+}
+
+.column h2 {
+    font-size: 1.05rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-weight: 600;
+    margin-top: 0;
+    margin-bottom: 15px;
+    padding-left: 4px;
+    display: flex;
+    align-items: center;
+}
+
+#todo h2 { color: #f87171; }        
+#inprogress h2 { color: #fbbf24; }  
+#done h2 { color: #34d399; }        
+
+.card-list {
+    min-height: 200px;
+    max-height: 60vh;
+    overflow-y: auto;
+    background-color: rgba(15, 23, 42, 0.5);
+    border: 2px dashed rgba(255, 255, 255, 0.05);
+    border-radius: 8px;
+    padding: 12px;
+    margin-bottom: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.card {
+    background-color: #1e293b;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    color: #e2e8f0;
+    padding: 14px 16px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.15);
+    cursor: grab;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.95rem;
+    line-height: 1.4;
+}
+
+.card:hover {
+    background-color: #334155;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3), 0 4px 6px -4px rgba(0, 0, 0, 0.3);
+    border-color: rgba(255, 255, 255, 0.15);
+}
+
+.card:active {
+    cursor: grabbing;
+    transform: scale(0.98);
+}
+
+.delete-btn {
+    background: none;
+    border: none;
+    color: #94a3b8;
+    cursor: pointer;
+    font-size: 1.3rem;
+    padding: 0 0 0 10px;
+    line-height: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.delete-btn:hover {
+    color: #ef4444;
+    transform: scale(1.2);
+}
+
+.add-btn {
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.05);
+    color: #cbd5e1;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 10px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.add-btn:hover {
+    background-color: #3b82f6;
+    color: white;
+    border-color: #3b82f6;
+    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+}
+
+.card-list::-webkit-scrollbar {
+    width: 6px;
+}
+.card-list::-webkit-scrollbar-track {
+    background: transparent;
+}
+.card-list::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+}
+.card-list::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
